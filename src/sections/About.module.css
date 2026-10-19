@@ -1,0 +1,20 @@
+.prose {
+  display: grid;
+  gap: var(--space-5);
+  max-width: var(--measure);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.prose p:first-child {
+  color: var(--color-text);
+}
+
+@media (min-width: 60rem) {
+  .layout {
+    display: grid;
+    grid-template-columns: 9fr 11fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+}

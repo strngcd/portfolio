@@ -1,0 +1,140 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  height: var(--header-height);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+  line-height: 1;
+  padding-block: var(--space-2);
+}
+
+.dot {
+  color: var(--color-accent-text);
+}
+
+.desktopNav {
+  display: none;
+  margin-left: auto;
+}
+
+.list {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+/* Active section: text colour plus a lime bar, so the state is not colour-only. */
+.link[aria-current='true'] {
+  color: var(--color-text);
+}
+
+.link[aria-current='true']::after {
+  content: '';
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: 0.15rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.menuButton {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.mobileNav {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.mobileNav[hidden] {
+  display: none;
+}
+
+.mobileList {
+  list-style: none;
+  padding-block: var(--space-3) var(--space-5);
+}
+
+.mobileList .link {
+  display: block;
+  padding: var(--space-3) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobileList li:last-child .link {
+  border-bottom: 0;
+}
+
+.mobileList .link[aria-current='true']::after {
+  left: auto;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 48rem) {
+  .desktopNav {
+    display: block;
+  }
+
+  .menuButton,
+  .mobileNav {
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+.heading {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  max-width: 44rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.index {
+  color: var(--color-accent-text);
+}
+
+.rule {
+  width: 2rem;
+  height: 1px;
+  background: var(--color-border-strong);
+}
+
+.title {
+  font-size: var(--text-3xl);
+}
+
+.intro {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: var(--measure);
+}

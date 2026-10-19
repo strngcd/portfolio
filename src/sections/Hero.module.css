@@ -1,0 +1,74 @@
+.hero {
+  padding-top: clamp(4rem, 2rem + 9vw, 9rem);
+  padding-bottom: var(--section-gap);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.mark {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+.title {
+  font-size: var(--text-hero);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  max-width: 15ch;
+}
+
+/* A lime underline marks the key phrase; the text itself stays full-contrast. */
+.highlight {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-repeat: no-repeat;
+  background-size: 100% 0.12em;
+  background-position: 0 92%;
+}
+
+.lede {
+  margin-top: var(--space-6);
+  max-width: 38rem;
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-5);
+  margin: var(--space-9) 0 0;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.facts dd {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+@media (min-width: 40rem) {
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 23.4375rem) {
+  .actions :global(.button) {
+    flex: 1 1 100%;
+  }
+}

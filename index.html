@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bilal Ferej · Software Developer</title>
+    <meta
+      name="description"
+      content="Bilal Ferej is a software developer building practical web applications, with a focus on backend engineering, system design, and structured ML evaluation challenges."
+    />
+    <link rel="canonical" href="https://bilalferej.com/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bilal Ferej" />
+    <meta property="og:title" content="Bilal Ferej · Software Developer" />
+    <meta
+      property="og:description"
+      content="Practical web applications, backend engineering, and structured ML evaluation challenges."
+    />
+    <meta property="og:url" content="https://bilalferej.com/" />
+    <meta property="og:image" content="https://bilalferej.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Apply the theme before first paint so there is no flash of the wrong theme. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored === 'light' || stored === 'dark'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 24px; font-family: sans-serif">
+        This site needs JavaScript. You can reach Bilal at
+        <a href="mailto:ferejbilal@gmail.com">ferejbilal@gmail.com</a>.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

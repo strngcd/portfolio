@@ -1,0 +1,74 @@
+.entry {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.entry:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.entry:last-child {
+  padding-bottom: 0;
+}
+
+.body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.number {
+  color: var(--color-accent-text);
+}
+
+.title {
+  font-size: var(--text-2xl);
+}
+
+.title a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--duration-slow) var(--ease);
+}
+
+.title a:hover {
+  background-size: 100% 2px;
+}
+
+.summary {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 34rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  list-style: none;
+  padding-top: var(--space-2);
+}
+
+/* Editorial row: roughly 55% image, 45% text, alternating sides. */
+@media (min-width: 60rem) {
+  .entry {
+    grid-template-columns: 11fr 9fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .reverse .media {
+    order: 2;
+  }
+}

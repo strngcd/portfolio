@@ -1,0 +1,33 @@
+.layout {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.intro {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: var(--space-5);
+}
+
+.index {
+  color: var(--color-accent-text);
+  margin-right: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  max-width: 14ch;
+}
+
+.lede {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 60rem) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+}

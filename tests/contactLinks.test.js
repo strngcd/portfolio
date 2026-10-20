@@ -6,6 +6,11 @@ describe('getContactLinks', () => {
     expect(links).toEqual([{ label: 'Email', value: 'a@b.c', href: 'mailto:a@b.c' }]);
   });
 
+  test('dials the phone number without spaces', () => {
+    const [phone] = getContactLinks({ phone: '+251 983 301 090' });
+    expect(phone).toEqual({ label: 'Phone', value: '+251 983 301 090', href: 'tel:+251983301090' });
+  });
+
   test('shows tidy URLs and marks external links', () => {
     const [github, linkedin] = getContactLinks({
       github: 'https://github.com/someone',

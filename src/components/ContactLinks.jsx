@@ -10,6 +10,11 @@ export function getContactLinks(details = contact) {
       value: details.email,
       href: `mailto:${details.email}`,
     },
+    details.phone && {
+      label: 'Phone',
+      value: details.phone,
+      href: `tel:${details.phone.replace(/\s/g, '')}`,
+    },
     details.github && {
       label: 'GitHub',
       value: details.github.replace(/^https?:\/\/(www\.)?/, ''),

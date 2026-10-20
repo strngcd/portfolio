@@ -10,6 +10,7 @@ export const site = {
 
 export const contact = {
   email: 'ferejbilal@gmail.com',
+  phone: '+251 983 301 090',
   github: 'https://github.com/strngcd',
   linkedin: 'https://www.linkedin.com/in/bilalferej',
   // Add the path of a PDF in /public (for example '/bilal-ferej-resume.pdf') once it exists.

@@ -27,10 +27,11 @@ describe('case study page', () => {
     expect(screen.queryByRole('heading', { name: /Planned improvements/ })).not.toBeInTheDocument();
   });
 
-  test('says the repository is private instead of inventing links', () => {
+  test('links to the GitHub repository and no unconfirmed demo', () => {
     renderApp('/work/medicare');
-    expect(screen.getByText('Private repository')).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /Live demo|Source/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Source/ })).toHaveAttribute('href', 'https://github.com/strngcd/medicare-v1');
+    expect(screen.queryByRole('link', { name: /Live demo/ })).not.toBeInTheDocument();
+    expect(screen.queryByText('Private repository')).not.toBeInTheDocument();
   });
 
   test('every screenshot has alt text and reserved dimensions', () => {

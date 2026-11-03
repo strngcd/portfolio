@@ -22,7 +22,7 @@ export const projects = [
       alt: 'Medicare dashboard showing monthly sales, transactions, items sold, and counts of low-stock, out-of-stock, and expiring products.',
     },
     demoUrl: null,
-    repoUrl: null,
+    repoUrl: 'https://github.com/strngcd/medicare-v1',
     caseStudy: {
       overview:
         'Medicare is an internal operations system for a pharmacy with more than one branch. It covers the medicine catalog and batches, branch inventory, purchasing and receiving, a point of sale, refunds and voids, transfers between branches, staff permissions, alerts, reports, and a full audit trail.',
